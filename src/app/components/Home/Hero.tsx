@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/carousel"
 import Image from "next/image"
 
+
+
 const slides = [
   {
     title: "Summer Collection",
@@ -35,8 +37,9 @@ export default function Hero() {
   return (
     <section className="w-full bg-indigo-200 py-10 md:py-30">
       <Carousel
+      
         opts={{ loop: true }}
-        className="w-full max-w-7xl mx-auto"
+        className="w-4/5 2xl:w-8/12  mx-auto"
       >
         <CarouselContent>
           {slides.map((slide, index) => (
@@ -65,7 +68,7 @@ export default function Hero() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="flex justify-between  items-center px-4 md:px-10 mt-4">
+        <div className="2xl:flex justify-between hidden  items-center px-4 md:px-10 mt-4">
           <CarouselPrevious  />
           <CarouselNext />
         </div>

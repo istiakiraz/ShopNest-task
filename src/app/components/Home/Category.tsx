@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { getAllCategory } from '../../../../Request/request'
 
@@ -7,11 +8,11 @@ export default async function Category() {
     
 
   return (
-    <div className='pt-16 pb-12'>
-        <h1 className='text-center text-2xl font-bold'>
-            All Category
+    <section className='pt-16 pb-12'>
+        <h1 className='text-center xl:text-5xl text-indigo-500 uppercase md:text-4xl text-2xl font-bold'>
+            Available Category
         </h1>
-        {/* show category data by api */}
+       
 
         <div className='mt-12 w-4/5 mx-auto grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
         {
@@ -25,6 +26,6 @@ export default async function Category() {
         </div>
 
 
-    </div>
+    </section>
   )
 }

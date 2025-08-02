@@ -26,7 +26,7 @@ export default function ShoppingCartBtn() {
     </SheetTrigger>
     <SheetContent className="pt-8 px-4 overflow-auto h-full">
       {/* cart side bar content */}
-      <CartSideBar items={items}></CartSideBar>
+      <div><CartSideBar items={items}></CartSideBar></div>
     </SheetContent>
     </Sheet>
   );

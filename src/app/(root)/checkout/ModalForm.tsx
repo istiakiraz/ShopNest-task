@@ -1,9 +1,13 @@
 "use client"
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
+import { useDispatch } from "react-redux"
+import { addOrder, OrderItem } from "../../../../store/orderSlice"
 
 type Props = {
   totalItems: number;
@@ -17,10 +21,14 @@ type FormValues = {
 }
 
 export default function ModalForm({ totalItems, totalAmount }: Props) {
+  const router = useRouter()
+  const [open, setOpen] = useState(false)
+  const dispatch = useDispatch();
+
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>()
 
   const onSubmit = (data: FormValues) => {
-    const order = {
+    const order : OrderItem = {
       orderId: Math.floor(Math.random() * 100000),
       customer: data,
       totalItems,
@@ -30,11 +38,18 @@ export default function ModalForm({ totalItems, totalAmount }: Props) {
 
     console.log("Order Created:", order)
     toast.success("Order placed successfully!")
+
+     dispatch(addOrder(order));
+        toast.success("Item Added To Cart");
+
+    // Reset form, close modal and redirect
     reset()
+    setOpen(false)
+    router.push("/order")
   }
 
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button className="bg-indigo-500 cursor-pointer hover:bg-indigo-700 mt-6">Pay Now</Button>
       </DialogTrigger>

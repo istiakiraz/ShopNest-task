@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Search from "./shared/Search";
-import { HeartIcon, User2Icon } from "lucide-react";
+import { ListOrderedIcon, User2Icon } from "lucide-react";
 import ShoppingCartBtn from "./shared/ShoppingCartBtn";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
@@ -26,11 +26,15 @@ export default function Navbar() {
           {/* search feature */}
           <Search></Search>
 
-          {/* book mark */}
-          <HeartIcon cursor={"pointer"}></HeartIcon>
+          {/* order btn */}
+          <Link href="/order">
+            <ListOrderedIcon cursor={"pointer"}></ListOrderedIcon>
+          </Link>
 
           {/* shopping cart feature */}
+
           <ShoppingCartBtn></ShoppingCartBtn>
+
 
           {/* user btn */}
 
@@ -42,9 +46,9 @@ export default function Navbar() {
           {/* user not sign-in */}
           <SignedOut>
             <SignInButton>
-                <div className="cursor-pointer">
-    <User2Icon />
-  </div>
+              <div className="cursor-pointer">
+                <User2Icon />
+              </div>
             </SignInButton>
           </SignedOut>
         </div>

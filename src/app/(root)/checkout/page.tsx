@@ -120,7 +120,7 @@ export default function CheckoutPage() {
           })}
           <div className="bg-indigo-900 rounded-2xl text-center py-10 px-6 text-white">
             <h1 className="border-b-2 border-gray-400 pb-4 text-2xl font-bold ">Your Total Oder</h1>
-             <h1 className="pt-4 overflow-x-hidden text-2xl"> Total Amount:  {totalPrice}</h1>
+             <h1 className="pt-4 overflow-x-hidden text-2xl"> Total Amount:  ${totalPrice}</h1>
              
             <ModalForm totalItems={totalQuantity} totalAmount={totalPrice} />
           </div>

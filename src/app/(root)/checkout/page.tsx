@@ -13,7 +13,6 @@ type Props = {
   items: CartItem[];
 };
 
-
 export default function CheckoutPage() {
   //all cart item
   const items = useSelector((state: RootState) => state.cart.items);
@@ -27,18 +26,18 @@ export default function CheckoutPage() {
     .reduce((total, item) => total + item.price * item.quantity, 0)
     .toFixed(2);
 
-    const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-    const handleAddCart = (item: CartItem) => dispatch(addItem(item));
-
-    const handleRemoveCart = (id: number) => dispatch(removeItem({id}));
-
-  
+  // btn function
+  const handleAddCart = (item: CartItem) => dispatch(addItem(item));
+  const handleRemoveCart = (id: number) => dispatch(removeItem({ id }));
 
   return (
     <div className="my-12 min-h-[60vh]">
       {items.length == 0 ? (
         <div className="flex items-center w-full  flex-col justify-center">
+
+          {/* if empty items */}
           <Image
             src="/Empty-rafiki.svg"
             alt="empty_cart"
@@ -56,10 +55,16 @@ export default function CheckoutPage() {
             </button>
           </Link>
         </div>
-      ) : (
+      ) : 
+      // items data show
+      ( 
         <div className="md:w-4/5 mx-auto w-[90%] grid grid-cols-1 gap-12">
           <div className="rounded-lg overflow-hidden bg-indigo-400  shadow-md ">
-            <h1 className="text-2xl lg:text-4xl font-bold text-white flex items-center gap-4 p-6 "> <ShoppingCart size={30}></ShoppingCart>({totalQuantity}) Items in Your Cart</h1>
+            <h1 className="text-2xl lg:text-4xl font-bold text-white flex items-center gap-4 p-6 ">
+              {" "}
+              <ShoppingCart size={30}></ShoppingCart>({totalQuantity}) Items in
+              Your Cart
+            </h1>
           </div>
           {items.map((item) => {
             return (
@@ -87,43 +92,49 @@ export default function CheckoutPage() {
                     {/* product quantity */}
                     <h1 className=" lg:text-2xl">Quantity: {item.quantity}</h1>
 
-                     {/* btn */}
-                <div className="mt-4 flex gap-6">
-                  {/* item remove btn in cart */}
-                  <button
-                    type="button"
-                    onClick={() => {
-                      handleRemoveCart(item.id);
-                    }}
-                    className=" cursor-pointer text-sm hover:bg-red-700 duration-500 bg-red-500 rounded text-white px-4 py-2"
-                  >
-                    Remove
-                  </button>
+                    {/* btn */}
+                    <div className="mt-4 flex gap-6">
+                      {/* item remove btn in cart */}
+                      <button
+                        type="button"
+                        onClick={() => {
+                          handleRemoveCart(item.id);
+                        }}
+                        className=" cursor-pointer text-sm hover:bg-red-700 duration-500 bg-red-500 rounded text-white px-4 py-2"
+                      >
+                        Remove
+                      </button>
 
-                  {/* item add btn in cart */}
-                  <button
-                    type="button"
-                    onClick={() => {
-                      handleAddCart(item);
-                    }}
-                    className=" cursor-pointer text-sm hover:bg-indigo-700 duration-500 bg-indigo-500 rounded  text-white px-4 py-2"
-                  >
-                    Add
-                  </button>
-                </div>
+                      {/* item add btn in cart */}
+                      <button
+                        type="button"
+                        onClick={() => {
+                          handleAddCart(item);
+                        }}
+                        className=" cursor-pointer text-sm hover:bg-indigo-700 duration-500 bg-indigo-500 rounded  text-white px-4 py-2"
+                      >
+                        Add
+                      </button>
+                    </div>
                   </div>
                 </div>
-
-              
               </div>
             );
           })}
-          <div className="bg-indigo-900 rounded-2xl text-center py-10 px-6 text-white">
-            <h1 className="border-b-2 border-gray-400 pb-4 text-2xl font-bold ">Your Total Oder</h1>
-             <h1 className="pt-4 overflow-x-hidden text-2xl"> Total Amount:  ${totalPrice}</h1>
-             
+
+          {/* total order section */}
+          <section className="bg-indigo-900 rounded-2xl text-center py-10 px-6 text-white">
+            <h1 className="border-b-2 border-gray-400 pb-4 text-2xl font-bold ">
+              Your Total Oder
+            </h1>
+            <h1 className="pt-4 overflow-x-hidden text-2xl">
+              {" "}
+              Total Amount: ${totalPrice}
+            </h1>
+
+            {/* modal open */}
             <ModalForm totalItems={totalQuantity} totalAmount={totalPrice} />
-          </div>
+          </section>
         </div>
       )}
     </div>

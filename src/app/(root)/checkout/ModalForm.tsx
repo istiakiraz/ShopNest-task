@@ -14,6 +14,7 @@ type Props = {
   totalAmount: string;
 }
 
+// customer data
 type FormValues = {
   name: string;
   address: string;
@@ -42,7 +43,7 @@ export default function ModalForm({ totalItems, totalAmount }: Props) {
      dispatch(addOrder(order));
         toast.success("Item Added To Cart");
 
-    // Reset form, close modal and redirect
+    // reset form, close modal and redirect
     reset()
     setOpen(false)
     router.push("/order")

@@ -31,10 +31,14 @@ export default function AllProducts() {
 
   <div className="w-4/5 mx-auto gap-8 mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {loading
-          ? Array.from({ length: 8 }).map((_, i) => (
+          ? 
+          // user react skeleton as a loader
+          Array.from({ length: 8 }).map((_, i) => (
               <ProductCardSkeleton key={i} />
             ))
-          : products?.map((product) => (
+          :
+          // all product 
+          products?.map((product) => (
               <div key={product.id}>
                 <ProductCard product={product} />
               </div>

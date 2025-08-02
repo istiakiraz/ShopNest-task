@@ -8,7 +8,7 @@ import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 export default function Navbar() {
   return (
-    <div className="h-[10vh] sticky top-0 z-50 bg-white shadow-md">
+    <nav className="h-[10vh] sticky top-0 z-50 bg-white shadow-md">
       <div className="flex items-center justify-between w-[90%] md:w-4/5 mx-auto h-full">
         {/* logo  */}
         <Link href="/">
@@ -32,11 +32,9 @@ export default function Navbar() {
           </Link>
 
           {/* shopping cart feature */}
-
           <ShoppingCartBtn></ShoppingCartBtn>
 
-
-          {/* user btn */}
+          {/*------- user btn ------*/}
 
           {/* sign-in user */}
           <SignedIn>
@@ -53,6 +51,6 @@ export default function Navbar() {
           </SignedOut>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }

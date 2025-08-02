@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div className="bg-indigo-200 ">
+    <footer className="bg-indigo-200 ">
       <div className="px-4 pt-16 mx-auto w-11/12 lg:w-9/12 md:px-24 lg:px-8">
         <div className="grid gap-16 row-gap-10 items-center mb-8 lg:grid-cols-6">
           <div className="md:max-w-md lg:col-span-2">
@@ -16,7 +16,8 @@ export default function Footer() {
             </div>
             <div className="-mt-8 lg:max-w-sm">
               <p className="text-sm text-gray-800">
-               ShopNest is your ultimate online shopping destination, designed to make life easier and more stylish. Whether you’re looking for the latest fashion trends, premium gadgets, home essentials, or beauty products — ShopNest brings them all together under one digital roof.
+               ShopNest is your ultimate online shopping destination, designed to make life easier and more stylish.
+                Whether you’re looking for the latest fashion trends, premium gadgets, home essentials, or beauty products — ShopNest brings them all together under one digital roof.
               </p>
             </div>
           </div>
@@ -119,6 +120,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }

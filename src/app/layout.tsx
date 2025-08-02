@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
   },
+  keywords: ['e-commerce', 'shop', 'nextjs', 'products', 'online store']
 };
 
 export default function RootLayout({

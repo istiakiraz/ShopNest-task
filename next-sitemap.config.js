@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'http://localhost:3000', 
+  siteUrl: 'https://shop-nest-task-main.vercel.app', 
   generateRobotsTxt: true,
   sitemapSize: 5000,
   changefreq: 'daily',

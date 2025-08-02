@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: http://localhost:3000
+Host: https://shop-nest-task-main.vercel.app
 
 # Sitemaps
-Sitemap: http://localhost:3000/sitemap.xml
+Sitemap: https://shop-nest-task-main.vercel.app/sitemap.xml

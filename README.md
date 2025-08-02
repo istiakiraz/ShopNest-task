@@ -2,7 +2,7 @@
 
 **ShopNest** is a sleek, responsive, and SEO-optimized e-commerce frontend built with **Next.js 15**, **Tailwind CSS**, **Redux Toolkit**, and **Clerk authentication**. It delivers a fast, user-friendly shopping experience with reusable UI components, shopping cart functionality, authentication, and dynamic page rendering — all designed for modern web performance.
 
-🔗 **Live Repo:** [https://github.com/istiakiraz/ShopNest-task](https://github.com/istiakiraz/ShopNest-task)
+🔗 **Live Link:** [https://shop-nest-task-main.vercel.app/](https://shop-nest-task-main.vercel.app/)
 
 ---
 

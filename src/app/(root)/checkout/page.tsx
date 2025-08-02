@@ -36,13 +36,13 @@ export default function CheckoutPage() {
   
 
   return (
-    <div className="mt-12 min-h-[60vh]">
+    <div className="my-12 min-h-[60vh]">
       {items.length == 0 ? (
         <div className="flex items-center w-full  flex-col justify-center">
           <Image
             src="/Empty-rafiki.svg"
             alt="empty_cart"
-            width={600}
+            width={500}
             height={500}
             className="object-cover mx-auto"
           />

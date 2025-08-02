@@ -10,7 +10,6 @@ import CartSideBar from "./CartSideBar";
 export default function ShoppingCartBtn() {
 
    const items =  useSelector((state: RootState)=> state.cart.items)
-
    const totalQuantity = items.reduce((total, item) => total+item.quantity ,0)
 
 

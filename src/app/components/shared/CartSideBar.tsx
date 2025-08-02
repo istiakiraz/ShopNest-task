@@ -71,12 +71,12 @@ export default function CartSideBar({ items }: Props) {
                 <div className="mt-4 flex gap-6">
 
                     {/* item remove btn in cart */}
-                    <button onClick={()=>{
+                    <button type="button" onClick={()=>{
                         handleRemoveCart(item.id)
                     }} className=" cursor-pointer text-sm hover:bg-red-700 duration-500 bg-red-500 rounded text-white px-4 py-2" >Remove</button>
 
                      {/* item add btn in cart */}
-                    <button 
+                    <button type="button" 
                     onClick={()=>{
                         handleAddCart(item)
                     }} className=" cursor-pointer text-sm hover:bg-indigo-700 duration-500 bg-indigo-500 rounded  text-white px-4 py-2" >Add</button>
@@ -88,7 +88,7 @@ export default function CartSideBar({ items }: Props) {
 
           <Link href='/checkout'>
           <SheetClose>
-            <button className="px-6 w-full mt-2 mb-5 py-2 bg-indigo-500 text-white rounded cursor-pointer hover:bg-indigo-800 transition">View All Cart</button>
+            <button className="px-6 min-w-full mt-2 mb-5 py-2 bg-indigo-500 text-white rounded cursor-pointer hover:bg-indigo-800 transition">View All Cart</button>
           </SheetClose>
           </Link>
 

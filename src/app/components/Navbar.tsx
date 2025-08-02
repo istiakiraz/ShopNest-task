@@ -42,7 +42,9 @@ export default function Navbar() {
           {/* user not sign-in */}
           <SignedOut>
             <SignInButton>
-              <User2Icon cursor={"pointer"}></User2Icon>
+                <div className="cursor-pointer">
+    <User2Icon />
+  </div>
             </SignInButton>
           </SignedOut>
         </div>

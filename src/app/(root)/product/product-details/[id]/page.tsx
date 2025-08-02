@@ -3,13 +3,6 @@ import { Metadata } from "next";
 import { Product } from "../../../../../../typing";
 import AddToCart from "./add-cart";
 
-type PageProps = {
-  params: {
-    id: string;
-  };
-};
-
-
 //  Params for SSG
 export async function generateStaticParams() {
   const res = await fetch("https://fakestoreapi.com/products");
@@ -20,33 +13,29 @@ export async function generateStaticParams() {
   }));
 }
 
-//  metadata for SEO
-export async function generateMetadata({
-  params,
-}: {
-  params: { id: string };
-}): Promise<Metadata> {
-  const res = await fetch(`https://fakestoreapi.com/products/${params?.id}`);
+export async function generateMetadata({ params }: { params: Promise< { id: string }> })
+: Promise<Metadata> {
+   const {id} = await params
+  const res = await fetch(`https://fakestoreapi.com/products/${id}`);
   const product: Product = await res.json();
 
   return {
     title: `${product.title} | ShopNest`,
     description: product.description.slice(0, 150),
     openGraph: {
-    title: product.title,
-    description: product.description?.slice(0, 150),
-    images: [product.image],
-  },
+      title: product.title,
+      description: product.description?.slice(0, 150),
+      images: [product.image],
+    },
   };
 }
 
 // product Details Page
-export default async function ProductDetails({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const res = await fetch(`https://fakestoreapi.com/products/${params?.id}`, {
+export default async function ProductDetails({ params }: { params: Promise< { id: string }> }) {
+
+  const {id} = await params
+
+  const res = await fetch(`https://fakestoreapi.com/products/${id}`, {
     cache: "force-cache",
   });
   const product: Product = await res.json();

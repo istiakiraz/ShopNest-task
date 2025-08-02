@@ -4,7 +4,7 @@ export interface OrderItem {
   customer: {
     address: string;
     name: string;
-    phone: number;
+    phone: string;
   };
   totalItems: number;
   totalAmount: string;

@@ -13,9 +13,9 @@ type Props = {
 
 export default function AddToCart({ product }: Props) {
 
-    const items =  useSelector((state: RootState)=> state.cart.items)
+    // const items =  useSelector((state: RootState)=> state.cart.items)
+    // console.log(items);
 
-    console.log(items);
     const dispatch = useDispatch()
 
    const handleAddToCart=(product: Product)=>{

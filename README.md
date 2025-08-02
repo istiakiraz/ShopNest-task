@@ -95,28 +95,47 @@ ShopNest is built with SEO in mind using Next.js App Router best practices:
 ---
 ### Packages Used
 
-{
-  "@clerk/nextjs": "^6.28.1",
-  "@radix-ui/react-avatar": "^1.1.10",
-  "@radix-ui/react-dialog": "^1.1.14",
-  "@radix-ui/react-scroll-area": "^1.2.9",
-  "@radix-ui/react-slot": "^1.2.3",
-  "@radix-ui/react-tabs": "^1.1.12",
-  "@reduxjs/toolkit": "^2.8.2",
-  "react-redux": "^9.2.0",
-  "class-variance-authority": "^0.7.1",
-  "clsx": "^2.1.1",
-  "embla-carousel-react": "^8.6.0",
-  "lucide-react": "^0.535.0",
-  "next": "15.4.5",
-  "next-themes": "^0.4.6",
-  "react": "19.1.0",
-  "react-dom": "19.1.0",
-  "react-hook-form": "^7.62.0",
-  "react-loading-skeleton": "^3.5.0",
-  "sonner": "^2.0.6",
-  "tailwind-merge": "^3.3.1"
-}
+@clerk/nextjs ^6.28.1 – authentication & user session handling
+
+@radix-ui/react-avatar ^1.1.10
+
+@radix-ui/react-dialog ^1.1.14
+
+@radix-ui/react-scroll-area ^1.2.9
+
+@radix-ui/react-slot ^1.2.3
+
+@radix-ui/react-tabs ^1.1.12 – accessible UI components
+
+@reduxjs/toolkit ^2.8.2 – state management for cart
+
+class-variance-authority ^0.7.1
+
+clsx ^2.1.1 – conditional class merging
+
+embla-carousel-react ^8.6.0 – carousel and slider support
+
+lucide-react ^0.535.0 – clean, modern icon set
+
+next ^15.4.5 – app router, static generation, metadata
+
+next-sitemap ^4.2.3 – sitemap generation
+
+next-themes ^0.4.6 – dark/light mode support
+
+react ^19.1.0
+
+react-dom ^19.1.0
+
+react-hook-form ^7.62.0 – performant forms
+
+react-loading-skeleton ^3.5.0 – skeleton UI for loading states
+
+react-redux ^9.2.0 – integrates Redux with React
+
+sonner ^2.0.6 – modern toast notifications
+
+tailwind-merge ^3.3.1 – utility class merging for Tailwind
 
 
 

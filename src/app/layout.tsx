@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import {ClerkProvider} from '@clerk/nextjs';
+import StoreProvider from "../../StoreProvider/StoreProvider";
 
 const poppins = Poppins({
   weight: ['400', '600', '700'],
@@ -27,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <StoreProvider>
     <ClerkProvider>
-
     <html lang="en">
       <body
         className={`${poppins.className} antialiased`}
@@ -39,5 +40,6 @@ export default function RootLayout({
       </body>
     </html>
     </ClerkProvider>
+    </StoreProvider>
   );
 }

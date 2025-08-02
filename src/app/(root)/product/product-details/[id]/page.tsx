@@ -48,7 +48,7 @@ export default async function ProductDetails({
   return (
     <div className="max-w-6xl mx-auto pt-20 lg:pt-30 p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
       {/* img */}
-      <div className="flex col-span-1 hover:scale-110 duration-500 justify-center">
+      <div className="flex col-span-1 items-center hover:scale-110 duration-500 justify-center">
         <Image
           src={product.image}
           alt={product.title}
@@ -74,7 +74,7 @@ export default async function ProductDetails({
         </p>
 
         {/* add to cart btn */}
-        <AddToCart></AddToCart>
+        <AddToCart product={product} ></AddToCart>
       </div>
     </div>
   );
